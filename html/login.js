@@ -16,8 +16,9 @@ $(document).on("click", "#login", function(){
 		dataType: "JSON",
 		success: function (result) {
 			if(result.success == true){
-                location.href = "./index.html"
                 var memberToken = result.memberToken;
+				localStorage.setItem("isLogin", 1);
+                location.href = "./index.html";
 			    setCookie("Authorization", memberToken, 0.5);
             }else{
                 alert(result.message);
