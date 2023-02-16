@@ -62,6 +62,10 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+
+    <!-- src -->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./login.js"></script>
   </head>
 
   <body>
@@ -140,11 +144,11 @@
 
               <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email or Username</label>
+                  <label for="email" class="form-label">User ID</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="email"
+                    id="id"
                     name="email-username"
                     placeholder="Enter your email or username"
                     autofocus
@@ -169,20 +173,15 @@
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                    <label class="form-check-label" for="remember-me"> Remember Me </label>
-                  </div>
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                  <intpu type="button" class="btn btn-primary d-grid w-100" id="login" >Sign in</intpu>
                 </div>
               </form>
 
               <p class="text-center">
                 <span>New on our platform?</span>
-                <a href="auth-register-basic.html">
+                <a href="./register.html">
                   <span>Create an account</span>
                 </a>
               </p>

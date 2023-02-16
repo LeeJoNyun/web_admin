@@ -62,6 +62,22 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <!-- src -->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./register.js"></script>
+
+    <style type="text/css" >
+      .wrap-loading { /*로딩 이미지*/
+          position: fixed;
+          top:35%;
+          left:70%;
+          margin-left: -21px;
+          margin-top: -21px;
+      }
+      .display-none{ /*감추기*/
+          display:none;
+      }
+      </style>
   </head>
 
   <body>
@@ -140,19 +156,15 @@
 
               <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
                 <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
+                  <label for="username" class="form-label">ID</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="username"
-                    name="username"
-                    placeholder="Enter your username"
+                    id="id"
+                    name="id"
+                    placeholder=""
                     autofocus
                   />
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <label class="form-label" for="password">Password</label>
@@ -168,22 +180,37 @@
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+                </div>
+                
 
                 <div class="mb-3">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+                    <input class="form-check-input" type="checkbox" id="agreeCheck" name="terms" />
                     <label class="form-check-label" for="terms-conditions">
-                      I agree to
-                      <a href="javascript:void(0);">privacy policy & terms</a>
+                      <a href="javascript:void(0);">개인정보 활용 동의</a>
                     </label>
                   </div>
                 </div>
-                <button class="btn btn-primary d-grid w-100">Sign up</button>
+                <input type="button" id="btn_signIn" class="btn btn-primary d-grid w-100" value="회원가입" />
               </form>
 
               <p class="text-center">
                 <span>Already have an account?</span>
-                <a href="auth-login-basic.html">
+                <a href="./login.html">
                   <span>Sign in instead</span>
                 </a>
               </p>
@@ -195,16 +222,9 @@
     </div>
 
     <!-- / Content -->
-
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
-
+    <div class="wrap-loading display-none">
+      <div><img style="width: 50px; height: 50px;" src="../assets/img/icons/loding.gif" /></div>
+  </div>    
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
