@@ -62,6 +62,9 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <!-- src -->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./forgot_passwd.js"></script>
   </head>
 
   <body>
@@ -139,6 +142,17 @@
               <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
               <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
                 <div class="mb-3">
+                  <label for="email" class="form-label">ID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="id"
+                    name="id"
+                    placeholder="Enter your ID"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input
                     type="text"
@@ -149,7 +163,7 @@
                     autofocus
                   />
                 </div>
-                <button class="btn btn-primary d-grid w-100">Send Reset Link</button>
+                <input type="button" id="btn_check" class="btn btn-primary d-grid w-100" value="CHECK ID" />
               </form>
               <div class="text-center">
                 <a href="auth-login-basic.html" class="d-flex align-items-center justify-content-center">
@@ -165,16 +179,6 @@
     </div>
 
     <!-- / Content -->
-
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
-
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
